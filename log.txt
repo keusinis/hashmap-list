@@ -1,0 +1,75 @@
+Starting tests...
+
+  [PASS] T01  Default construction
+         empty()=true, size()=0
+
+  [PASS] T02  operator+= single entry
+         size()=1, get("cat")="meow"
+
+  [PASS] T03  operator+= multiple entries
+         size()=3, get("b")="2"
+
+  [PASS] T04  operator[] key found
+         ["cat"]=true
+
+  [PASS] T05  operator[] key not found
+         ["dog"]=false
+
+  [PASS] T06  operator%= update value
+         get("cat")="PURR"
+
+  [PASS] T07  operator-= delete entry
+         size()=1, cat gone, dog remains
+
+  [PASS] T08  operator! clear
+         empty()=true, size()=0
+
+  [PASS] T09  Copy constructor deep copy
+         copy.size()=2, copy["z"]=false after original modified
+
+  [PASS] T10  Copy assignment deep copy
+         dst.size()=1, dst["b"]=false after src modified
+
+  [PASS] T11  operator== equal maps
+         identical content => true
+
+  [PASS] T12  operator== different values
+         same key, different value => false
+
+  [PASS] T13  operator!=
+         different keys => true
+
+  [PASS] T14  operator< lexicographic
+         apple < banana
+
+  [PASS] T15  operator>
+         banana > apple
+
+  [PASS] T16  operator<= equal case
+         equal maps => true
+
+  [PASS] T17  operator<= less case
+         a <= b => true
+
+  [PASS] T18  Comparison alignment
+         != == !(==), <= == !(>), >= == !(<)
+
+  [PASS] T19  operator< different sizes
+         empty < non-empty => true
+
+  [PASS] T20  Exception: duplicate key on +=
+         HashMapException thrown for duplicate key
+
+  [PASS] T21  Exception: delete missing key
+         HashMapException thrown for missing key on -=
+
+  [PASS] T22  Exception: update missing key
+         HashMapException thrown for missing key on %=
+
+  [PASS] T23  Exception: get missing key
+         HashMapException thrown for missing key on get()
+
+  [PASS] T24  toString() format
+         toString()=1/16:hello=world
+
+Results: 24 passed, 0 failed
